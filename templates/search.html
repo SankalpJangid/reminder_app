@@ -42,6 +42,7 @@
           Hi, {{request.user}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href={% url 'change_password' %}>Change Password</a>
           <a class="dropdown-item" href="/logout">Logout</a>
             </div>
         </li>
@@ -69,7 +70,7 @@
 {% if alltask|length == 0 %}
     <h1 class="display-4">No Result Found</h1>
 {% else %}
-  <h1 class="display-4">Search Result</h1>
+  <h1 class="display-4">Search Result: {{query}}</h1>
 {% endif %}
 </div>
 </div>

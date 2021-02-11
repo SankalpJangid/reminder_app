@@ -110,9 +110,7 @@ def update_record(request,id):
     else:
         return HttpResponse("404 error")
 
-
-    
-
+@login_required(login_url="/")
 def search(request):
     query = request.GET['search']
     if len(query) == 0:
@@ -120,15 +118,26 @@ def search(request):
     elif len(query) > 70:
         alltask = Details.objects.none()
     else:
-        alltasktitle = Details.objects.filter(detail__icontains=query)
-        alltasktime = Details.objects.filter(datetime__icontains=query)
-        alltask = alltasktitle.union(alltasktime)
-    
+        loginuser = request.user
+        me = Details.objects.filter(user=loginuser)
+        alltasktitle = me.filter(detail__contains=query)
+        alltaskdate = me.filter(datetime__contains=query)
+        alltask = alltasktitle.union(alltaskdate)
+        # if query in me:
+        # alltasktitle = Details.objects.filter(detail__contains=query)
+        # alltasktime = Details.objects.filter(datetime__contains=query)
+        # print(alltasktime)
+        # print(alltasktitle)
+        # alltask = alltasktitle.union(alltasktime)
+        # else:
+        #     alltask = Details.objects.none()
+ 
     if alltask.count() == 0:
         messages.warning(request,"No result found.Please check The spelling correctly.")
 
     context = {'alltask':alltask, 'query':query}
     return render(request,'search.html',context)
+
 
 
 

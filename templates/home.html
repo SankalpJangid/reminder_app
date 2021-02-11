@@ -49,6 +49,7 @@
           Hi, {{request.user}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href={% url 'change_password' %}>Change Password</a>
           <a class="dropdown-item" href="/logout">Logout</a>
             </div>
         </li>
@@ -152,9 +153,9 @@
   </div>
   <div class="form-group">
     <label for="Password1">Password</label>
-    <input type="password" placeholder="Password" class="form-control" id="loginPassword" name="loginPassword" Required>
-  </div>
-  
+    <input type="password" placeholder="Password" class="form-control" id="loginPassword" name="loginPassword" Required> 
+  </div>  
+  <a href={% url 'reset_password' %}>Forgot Password</a><br><br>
   <button type="submit" class="btn btn-primary">login</button>
    </form>
       </div>
