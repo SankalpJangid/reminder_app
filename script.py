@@ -26,7 +26,7 @@ def send():
             server = smtplib.SMTP('smtp.gmail.com:587')
             server.ehlo()
             server.starttls()
-            server.login("reminderapp01@gmail.com", "reminder@900")
+            server.login("sender mail", "password")
             message = f"""
 To: {mail}
 Subject: Reminder for your work
