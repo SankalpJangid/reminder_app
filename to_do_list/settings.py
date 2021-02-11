@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^l+ymfimw%j1n5a7^72)*sa9#iax$qd-b&2a2fgb6wr(sn1lzb'
+SECRET_KEY = 'put your secret key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -131,6 +131,7 @@ MESSAGE_TAGS = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'pics')
+<<<<<<< HEAD
 
 #smtp
 
@@ -140,3 +141,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "manujangid075@gmail.com"
 EMAIL_HOST_PASSWORD = "jangid@90011"
+=======
+>>>>>>> 9760587e3fa58cfa44ed905f8cfea2d501e7cd8a
