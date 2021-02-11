@@ -37,7 +37,7 @@ Your Work: {message_detail}
 
 This mail is computer generated and therefore does not reply to it.
 """
-            server.sendmail("reminderapp01@gmail.com",mail , message)
+            server.sendmail("sender mail",mail , message)
             server.quit()
             time.sleep(59)
             print("Email successfully sent")
